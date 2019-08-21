@@ -1,19 +1,32 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { Text, View, StyleSheet, Platform } from "react-native";
+import {
+  createBottomTabNavigator,
+  createStackNavigator,
+  createAppContainer,
+} from "react-navigation";
+import HomeScreen from "./screens/HomeScreen";
+import EventsScreen from "./screens/EventsScreen";
+import ContactScreen from "./screens/ContactScreen";
+import TabBarIcon from "./components/TabBarIcon";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const HomeStack = createStackNavigator({
+  Home: HomeScreen,
 });
+
+HomeStack.navigationOptions = {
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-airplane" : "md-airplane"}
+    />
+  ),
+};
+
+export default createAppContainer(
+  createBottomTabNavigator({
+    Home: HomeStack,
+    Events: EventsScreen,
+    Contact: ContactScreen,
+  })
+);
