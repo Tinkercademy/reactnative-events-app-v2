@@ -23,10 +23,18 @@ HomeStack.navigationOptions = {
   ),
 };
 
+const EventsStack = createStackNavigator({
+  Events: EventsScreen,
+});
+
+const ContactStack = createStackNavigator({
+  Contact: ContactScreen,
+});
+
 export default createAppContainer(
   createBottomTabNavigator({
     Home: HomeStack,
-    Events: EventsScreen,
-    Contact: ContactScreen,
+    Events: EventsStack,
+    Contact: ContactStack,
   })
 );
