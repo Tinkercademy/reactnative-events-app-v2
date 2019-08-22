@@ -18,7 +18,7 @@ HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-airplane" : "md-airplane"}
+      name={Platform.OS === "ios" ? "ios-home" : "md-home"}
     />
   ),
 };
@@ -27,9 +27,27 @@ const EventsStack = createStackNavigator({
   Events: EventsScreen,
 });
 
+EventsStack.navigationOptions = {
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-list-box" : "md-list-box"}
+    />
+  ),
+};
+
 const ContactStack = createStackNavigator({
   Contact: ContactScreen,
 });
+
+ContactStack.navigationOptions = {
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === "ios" ? "ios-map" : "md-map"}
+    />
+  ),
+};
 
 export default createAppContainer(
   createBottomTabNavigator({
