@@ -1,9 +1,5 @@
-import * as React from 'react';
-import { Text, View, StyleSheet, Platform } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import TabBarIcon from '../components/TabBarIcon';
-
-let focused = true;
+import * as React from "react";
+import { Text, View, StyleSheet, Platform } from "react-native";
 
 export default function HomeScreen() {
   return (
