@@ -8,8 +8,25 @@ import {
   Body,
   Text,
   H1,
+  Accordion,
 } from "native-base";
 import Colors from "../constants/Colors";
+
+const dataArray = [
+  {
+    title: "What is this?",
+    content: "Exactly what the title says. A basket throwing competition!",
+  },
+  {
+    title: "Who is this by?",
+    content:
+      "The International Society of Basket Throwers (ISBT). We love throwing baskets.",
+  },
+  {
+    title: "Why is this?",
+    content: "Because baskets! Wheee!",
+  },
+];
 
 export default function HomeScreen() {
   return (
@@ -36,6 +53,11 @@ export default function HomeScreen() {
             />
           </CardItem>
         </Card>
+        <Accordion
+          style={styles.accordion}
+          dataArray={dataArray}
+          expanded={0}
+        />
       </Content>
     </Container>
   );
@@ -64,5 +86,8 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10,
+  },
+  accordion: {
+    marginTop: 10,
   },
 });
