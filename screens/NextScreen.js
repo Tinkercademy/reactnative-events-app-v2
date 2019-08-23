@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Image, StyleSheet, FlatList } from "react-native";
+import { StyleSheet } from "react-native";
 import { Container, Content, Text, Button } from "native-base";
 import Colors from "../constants/Colors";
 
-function goToNextScreen(props) {
-  props.navigation.navigate("Next");
+function goToHomeScreen(props) {
+  props.navigation.navigate("Home");
 }
 
 export default function ContactScreen(props) {
@@ -13,10 +13,10 @@ export default function ContactScreen(props) {
       <Content padder>
         <Button
           onPress={() => {
-            goToNextScreen(props);
+            goToHomeScreen(props);
           }}
         >
-          <Text>Go to next screen</Text>
+          <Text>Go home</Text>
         </Button>
       </Content>
     </Container>

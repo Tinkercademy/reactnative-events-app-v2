@@ -8,6 +8,7 @@ import {
 import HomeScreen from "./screens/HomeScreen";
 import EventsScreen from "./screens/EventsScreen";
 import ContactScreen from "./screens/ContactScreen";
+import NextScreen from "./screens/NextScreen";
 import TabBarIcon from "./components/TabBarIcon";
 import Colors from "./constants/Colors";
 
@@ -58,6 +59,7 @@ const ContactStack = createStackNavigator({
     screen: ContactScreen,
     navigationOptions: getNavigationOptions("Contact"),
   },
+  Next: NextScreen,
 });
 
 ContactStack.navigationOptions = {
