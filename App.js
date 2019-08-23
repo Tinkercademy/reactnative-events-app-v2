@@ -9,9 +9,23 @@ import HomeScreen from "./screens/HomeScreen";
 import EventsScreen from "./screens/EventsScreen";
 import ContactScreen from "./screens/ContactScreen";
 import TabBarIcon from "./components/TabBarIcon";
+import Colors from "./constants/Colors";
+
+function getNavigationOptions(title) {
+  return {
+    title: title,
+    headerStyle: {
+      backgroundColor: Colors.tintColor,
+    },
+    headerTintColor: "white",
+  };
+}
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: getNavigationOptions("Home"),
+  },
 });
 
 HomeStack.navigationOptions = {
@@ -24,7 +38,10 @@ HomeStack.navigationOptions = {
 };
 
 const EventsStack = createStackNavigator({
-  Events: EventsScreen,
+  Events: {
+    screen: EventsScreen,
+    navigationOptions: getNavigationOptions("Events"),
+  },
 });
 
 EventsStack.navigationOptions = {
@@ -37,7 +54,10 @@ EventsStack.navigationOptions = {
 };
 
 const ContactStack = createStackNavigator({
-  Contact: ContactScreen,
+  Contact: {
+    screen: ContactScreen,
+    navigationOptions: getNavigationOptions("Contact"),
+  },
 });
 
 ContactStack.navigationOptions = {

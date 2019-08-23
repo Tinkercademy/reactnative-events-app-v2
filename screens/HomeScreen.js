@@ -63,14 +63,6 @@ export default function HomeScreen() {
   );
 }
 
-HomeScreen.navigationOptions = {
-  title: "Home",
-  headerStyle: {
-    backgroundColor: Colors.tintColor,
-  },
-  headerTintColor: "white",
-};
-
 const styles = StyleSheet.create({
   headerText: {
     fontWeight: "bold",
